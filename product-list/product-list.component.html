@@ -1,0 +1,18 @@
+<table border="1" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products; index as i" [appHighlightExpensive]="product.price">
+      <td>{{ product.name }}</td>
+      <td>{{ product.category }}</td>
+      <td>{{ product.price | customCurrency }}</td>
+      <td><button (click)="onDelete(i)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>

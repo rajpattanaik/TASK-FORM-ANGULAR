@@ -1,0 +1,27 @@
+
+<form [formGroup]="productForm" (ngSubmit)="addProduct()">
+  <label>
+    Product Name:
+    <input formControlName="name" />
+  </label>
+  <br />
+  <label>
+    Category:
+    <input formControlName="category" />
+  </label>
+  <br />
+  <label>
+    Price:
+    <input formControlName="price" type="number" />
+  </label>
+  <br />
+  <button type="submit" [disabled]="!productForm.valid">Add Product</button>
+    </form>
+
+<hr />
+<hr>
+<app-product-list 
+     [products]="products" 
+   (delete)="deleteProduct($event)">
+   
+</app-product-list>
